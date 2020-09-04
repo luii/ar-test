@@ -9,11 +9,19 @@
     <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
 </head>
 <body style='margin : 0px; overflow: hidden;'>
-    <a-scene embedded arjs="trackingMethod:best;debugUIEnabled:true;">
-        <!-- create your content here. just a box for now -->
-        <a-box position='0 0.5 0' material='opacity: 1;'></a-box>
-        <!-- define a camera which will move according to the marker position -->
-        <a-marker-camera preset='hiro'></a-marker-camera>
+    <a-scene stats embedded arjs='trackingMethod: best; debugUIEnabled: false'>
+  	<a-marker preset="hiro">
+      <a-box position='0 1 0' material='color: red;'>
+        <a-animation attribute="rotation"
+          dur="2000"
+          fill="forwards"
+          from="0 0 0"
+          to="360 360 360"
+          repeat="indefinite"></a-animation>
+      </a-box>
+      </a-entity>
+  	</a-marker>
+  	<a-entity camera></a-entity>
     </a-scene>
 </body>
 </html>
